@@ -12,6 +12,8 @@ var game_file_list = [
 	"bin-debug/LoadingUI.js",
 	"bin-debug/Main.js",
 	"bin-debug/ThemeAdapter.js",
+	"bin-debug/base/socket/MyByteArray.js",
+	"bin-debug/base/socket/MySocket.js",
 	//----auto game_file_list end----
 ];
 

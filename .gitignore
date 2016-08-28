@@ -20,3 +20,11 @@ bin-debug/Main.js.map
 bin-debug/ThemeAdapter.js
 
 bin-debug/ThemeAdapter.js.map
+
+bin-debug/base/socket/MySocket.js
+
+bin-debug/base/socket/MyByteArray.js
+
+bin-debug/base/socket/MyByteArray.js.map
+
+bin-debug/base/socket/MySocket.js.map
