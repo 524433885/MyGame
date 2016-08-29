@@ -190,24 +190,58 @@ class Main extends eui.UILayer {
         this.addChild(button);
         button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
 
-        this.webSocket = new egret.WebSocket();        
-        this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);                            
-        this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);    
-        this.webSocket.connect("echo.websocket.org", 80);
+        // this.webSocket = new egret.WebSocket();        
+        // this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);                            
+        // this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);    
+        // this.webSocket.connect("echo.websocket.org", 80);
+
+        this.socket = new Shin.Base.MySocket();
+        this.socket.AddEventListeners(this.onSocketOpen, null, this.onReceiveMessage, null, this);
+        this.socket.Connect("echo.websocket.org", 80);
     }
 
-    private webSocket:egret.WebSocket;
+    //private webSocket:egret.WebSocket;
 
+    private socket:Shin.Base.MySocket;
+    private test:string = "test,tshiel测试测试!";
     private onSocketOpen():void 
     {    
-        var cmd = "Hello Egret WebSocket";    
-        console.log("连接成功，发送数据：" + cmd);    
-        this.webSocket.writeUTF(cmd);
+        // var cmd = "Hello Egret WebSocket";    
+        // console.log("连接成功，发送数据：" + cmd);    
+        // this.webSocket.writeUTF(cmd);
+
+        var data:Shin.Base.MyByteArray = new Shin.Base.MyByteArray();
+        data.Append_Boolean(true);
+        data.Append_Byte(1);
+        data.Append_Double(1.11143);
+        data.Append_Float(1.22);
+        data.Append_Int16(-333);
+        data.Append_Int32(-44444444);
+        var tenmp = this.test.length;
+        data.Append_String(this.test);
+        data.Append_Int64(-699999999999999);
+        data.Append_UInt16(777);
+        data.Append_UInt32(777777);
+        data.Append_UInt64(999999999999999);
+        this.socket.Send(data);
+
     }
-    private onReceiveMessage(e:egret.Event):void 
+    private onReceiveMessage(data:Shin.Base.MyByteArray):void 
     {    
-        var msg = this.webSocket.readUTF();    
-        console.log("收到数据：" + msg);
+        // var msg = this.webSocket.readUTF();    
+        // console.log("收到数据：" + msg);
+
+        var a:boolean = data.Pop_Boolean();
+        var b:number = data.Pop_Byte();
+        var c:number = data.Pop_Double();
+        var d:number = data.Pop_Float();
+        var e:number = data.Pop_Int16();
+        var f:number = data.Pop_Int32();
+        var h:string = data.Pop_String();
+        var g:number = data.Pop_Int64();
+        var i:number = data.Pop_UInt16();
+        var j:number = data.Pop_UInt32();
+        var k:number = data.Pop_UInt64();
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

@@ -9,11 +9,11 @@ var game_file_list = [
 	"libs/modules/socket/socket.js",
 	"libs/modules/tween/tween.js",
 	"bin-debug/AssetAdapter.js",
+	"bin-debug/base/socket/MyByteArray.js",
+	"bin-debug/base/socket/MySocket.js",
 	"bin-debug/LoadingUI.js",
 	"bin-debug/Main.js",
 	"bin-debug/ThemeAdapter.js",
-	"bin-debug/base/socket/MyByteArray.js",
-	"bin-debug/base/socket/MySocket.js",
 	//----auto game_file_list end----
 ];
 
