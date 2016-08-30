@@ -197,6 +197,8 @@ class Main extends eui.UILayer {
 
         this.socket = new Shin.Base.MySocket();
         this.socket.AddEventListeners(this.onSocketOpen, null, this.onReceiveMessage, null, this);
+        //this.socket.Connect("192.168.0.117", 12345);
+
         this.socket.Connect("echo.websocket.org", 80);
     }
 
@@ -303,5 +305,7 @@ class Main extends eui.UILayer {
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
         this.addChild(panel);
+
+        this.onSocketOpen();
     }
 }
