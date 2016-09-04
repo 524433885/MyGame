@@ -3,6 +3,10 @@
 		{
 			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json",
 			"name": "preload"
+		},
+		{
+			"keys": "zhaoyun_dead_png,zhaoyun_melee_png,zhaoyun_png,zhaoyun_ride_png,zhaoyun_ride_melee_png,zhaoyun_ride_dead_png",
+			"name": "role"
 		}
 	],
 	"resources": [
@@ -132,9 +136,54 @@
 			"name": "egret_icon_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun_dead.png",
+			"type": "image",
+			"name": "zhaoyun_dead_png"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun_melee.png",
+			"type": "image",
+			"name": "zhaoyun_melee_png"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun.png",
+			"type": "image",
+			"name": "zhaoyun_png"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun_dead.png",
+			"type": "image",
+			"name": "zhaoyun_dead2_png"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun.png",
+			"type": "image",
+			"name": "zhaoyun2_png"
+		},
+		{
+			"url": "assets/role/zhaoyun/zhaoyun_melee.png",
+			"type": "image",
+			"name": "zhaoyun_melee2_png"
+		},
+		{
+			"url": "assets/role/zhaoyun_ride/zhaoyun_ride_dead.png",
+			"type": "image",
+			"name": "zhaoyun_ride_dead_png"
+		},
+		{
+			"url": "assets/role/zhaoyun_ride/zhaoyun_ride.png",
+			"type": "image",
+			"name": "zhaoyun_ride_png"
+		},
+		{
+			"url": "assets/role/zhaoyun_ride/zhaoyun_ride_melee.png",
+			"type": "image",
+			"name": "zhaoyun_ride_melee_png"
 		}
 	]
 }

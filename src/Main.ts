@@ -65,6 +65,7 @@ class Main extends eui.UILayer {
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
         RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
         RES.loadGroup("preload");
+        RES.loadGroup("role");
     }
     private isThemeLoadEnd: boolean = false;
     /**
@@ -200,6 +201,18 @@ class Main extends eui.UILayer {
         //this.socket.Connect("192.168.0.117", 12345);
 
         this.socket.Connect("echo.websocket.org", 80);
+
+        var role:Shin.Game.MyBitmap_Role = new Shin.Game.MyBitmap_Role();
+        role.Load("zhaoyun_ride_melee_png");
+        role.setDir("right");
+        role.x = 100;
+        role.y = 100;
+        this.addChild(role);
+
+        var role1:Shin.Game.MyBitmap_Role = new Shin.Game.MyBitmap_Role();
+        role1.Load("zhaoyun_ride_png");
+        role1.setDir("left");
+        this.addChild(role1);
     }
 
     //private webSocket:egret.WebSocket;

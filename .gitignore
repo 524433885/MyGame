@@ -28,3 +28,19 @@ bin-debug/base/socket/MyByteArray.js
 bin-debug/base/socket/MyByteArray.js.map
 
 bin-debug/base/socket/MySocket.js.map
+
+bin-debug/game/role/Role.js
+
+bin-debug/game/role/MyBitmap_Role_Mgr.js
+
+bin-debug/game/role/MyBitmap_Role_Mgr.js.map
+
+bin-debug/game/role/MyBitmap_Role.js
+
+bin-debug/game/role/MyBitmap_Role.js.map
+
+bin-debug/game/role/Role.js.map
+
+src/.DS_Store
+
+src/base/socket/.DS_Store
