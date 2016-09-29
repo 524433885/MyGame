@@ -26,7 +26,7 @@
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
-
+declare function Login(uid): void;
 class Main extends eui.UILayer {
     /**
      * 加载进度界面
@@ -312,6 +312,7 @@ class Main extends eui.UILayer {
      * 点击按钮
      * Click the button
      */
+    
     private onButtonClick(e: egret.TouchEvent) {
         var panel = new eui.Panel();
         panel.title = "Title";
@@ -320,5 +321,7 @@ class Main extends eui.UILayer {
         this.addChild(panel);
 
         this.onSocketOpen();
+
+        Login(419100);
     }
 }
