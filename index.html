@@ -51,7 +51,7 @@
       function Login_gate(uid, callback) {
         pomelo.init({
           host: "127.0.0.1",
-          port: "3014",
+          port: "4010",
           log: true
         }, function() {
         pomelo.request("gate.gateHandler.queryEntry", {uid: uid}, function(data) {
@@ -71,15 +71,15 @@
 				port: port,
 				log: true
 			}, function() {
-				var route = "connector.entryHandler.enter";
+				var route = "connector.entryHandler.entry";
 				pomelo.request(route, {
-					username: uid,
-					rid: 12
+					uid: uid
 				}, function(data) {
 					if(data.error) {
 						showError(DUPLICATE_ERROR);
 						return;
 					}
+                    alert("数据："+ data.data.uid);
 				});
 			});
 		});

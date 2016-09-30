@@ -322,6 +322,6 @@ class Main extends eui.UILayer {
 
         this.onSocketOpen();
 
-        Login(419100);
+        Login("u419100");
     }
 }
