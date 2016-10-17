@@ -28,62 +28,63 @@
       var pomelo = window.pomelo;
 
 //wait message from the server.
-	pomelo.on('onChat', function(data) {
-		alert(data.from+" "+data.target+" "+data.msg);
-	});
+	// pomelo.on('onChat', function(data) {
+	// 	alert(data.from+" "+data.target+" "+data.msg);
+	// });
 
-	//update user list
-	pomelo.on('onAdd', function(data) {
-        alert(data.user + " online");
-	});
+	// //update user list
+	// pomelo.on('onAdd', function(data) {
+    //     alert(data.user + " online");
+	// });
 
-	//update user list
-	pomelo.on('onLeave', function(data) {
-        alert(data.user + " offline");
-	});
+	// //update user list
+	// pomelo.on('onLeave', function(data) {
+    //     alert(data.user + " offline");
+	// });
 
 
-	//handle disconect message, occours when the client is disconnect with servers
-	pomelo.on('disconnect', function(reason) {
-		alert("disconnect");
-	});
+	// //handle disconect message, occours when the client is disconnect with servers
+	// pomelo.on('disconnect', function(reason) {
+	// 	alert("disconnect");
+	// });
 
-      function Login_gate(uid, callback) {
-        pomelo.init({
-          host: "127.0.0.1",
-          port: "4010",
-          log: true
-        }, function() {
-        pomelo.request("gate.gateHandler.queryEntry", {uid: uid}, function(data) {
-            pomelo.disconnect();
-            callback(data.host, data.port);
-          });
-        });
-      }
+    //   function Login_gate(uid, callback) {
+    //     pomelo.init({
+    //       host: "127.0.0.1",
+    //       port: "4010",
+    //       log: true
+    //     }, function() {
+    //     pomelo.request("gate.gateHandler.queryEntry", {uid: uid}, function(data) {
+    //         pomelo.disconnect();
+    //         callback(data.host, data.port);
+    //       });
+    //     });
+    //   }
 
       
 
-      function Login(uid)
-      {
-          Login_gate(uid, function(host, port) {
-			pomelo.init({
-				host: host,
-				port: port,
-				log: true
-			}, function() {
-				var route = "connector.entryHandler.entry";
-				pomelo.request(route, {
-					uid: uid
-				}, function(data) {
-					if(data.error) {
-						showError(DUPLICATE_ERROR);
-						return;
-					}
-                    alert("数据："+ data.data.uid);
-				});
-			});
-		});
-      }
+    //   function Login(uid)
+    //   {
+    //       Login_gate(uid, function(host, port) {
+	// 		pomelo.init({
+	// 			host: host,
+	// 			port: port,
+	// 			log: true
+	// 		}, function() {
+	// 			var route = "connector.entryHandler.entry";
+	// 			pomelo.request(route, {
+	// 				uid: uid,
+    //                 name:"Rick"
+	// 			}, function(data) {
+	// 				if(data.error) {
+	// 					showError(DUPLICATE_ERROR);
+	// 					return;
+	// 				}
+    //                 alert("数据："+ data.data.uid);
+	// 			});
+	// 		});
+	// 	});
+    //   }
     </script>
 
     <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
@@ -103,11 +104,13 @@
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
 	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/base/pomelo/PomeloMgr.js"></script>
 	<script egret="game" src="bin-debug/base/socket/MyByteArray.js"></script>
 	<script egret="game" src="bin-debug/base/socket/MySocket.js"></script>
 	<script egret="game" src="bin-debug/game/role/MyBitmap_Role.js"></script>
 	<script egret="game" src="bin-debug/game/role/MyBitmap_Role_Mgr.js"></script>
 	<script egret="game" src="bin-debug/game/role/Role.js"></script>
+	<script egret="game" src="bin-debug/game/ui/WndMain.js"></script>
 	<script egret="game" src="bin-debug/LoadingUI.js"></script>
 	<script egret="game" src="bin-debug/Main.js"></script>
 	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>

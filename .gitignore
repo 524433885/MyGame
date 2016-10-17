@@ -44,3 +44,6 @@ bin-debug/game/role/Role.js.map
 src/.DS_Store
 
 src/base/socket/.DS_Store
+bin-debug/base/pomelo/PomeloMgr.js
+*.map
+bin-debug/game/ui/WndMain.js
